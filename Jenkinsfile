@@ -62,8 +62,8 @@ pipeline{
 
 */
 
+/*
 @Library('roboshop')_
-
 pipeline{
     agent any
     stages{
@@ -72,6 +72,73 @@ pipeline{
                 script{
                    test.testgroovyfun()
                    test()
+                }
+            }
+        }
+    }
+}
+*/
+
+/*
+@Library('roboshop')_
+
+pipeline{
+    agent any
+    stages{
+        stage('Test Groovy'){
+            steps{
+                script{
+                    print '****** pipeline script'
+                    abc= "hello"
+                    def xyz= 10
+
+                    print "abc= ${abc}"
+                    print "xyz=${xyz}"
+
+                    print abc
+                }
+                script{
+                  print "abc= ${abc}"
+                }
+            }
+        }
+        stage('Test var access'){
+            steps{
+                script{
+                    print "abc= ${abc}"
+                }
+            }
+        }
+    }
+}
+*/
+
+@Library('roboshop')_
+
+pipeline{
+    agent any
+    stages{
+        stage('Test Groovy'){
+            steps{
+                script{
+                    print '****** pipeline script'
+                    env.abc= "hello"
+                    def xyz= 10
+
+                    print "abc= ${abc}"
+                    print "xyz=${xyz}"
+
+                    print abc
+                }
+                script{
+                  print "abc= ${abc}"
+                }
+            }
+        }
+        stage('Test var access'){
+            steps{
+                script{
+                    print "abc= ${abc}"
                 }
             }
         }
