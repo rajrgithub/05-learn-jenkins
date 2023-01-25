@@ -29,6 +29,7 @@ pipeline {
 }
 */
 
+/*
 @Library('roboshop')_
 
 pipeline{
@@ -45,6 +46,24 @@ pipeline{
                 print "xyz=${xyz}"
 
                 print abc
+                }
+            }
+        }
+    }
+}
+
+*/
+
+@Library('roboshop')_
+
+pipeline{
+    agent any
+    stages{
+        stage('Test Groovy'){
+            steps{
+                script{
+                   test.testgroovyfun()
+                   test()
                 }
             }
         }
