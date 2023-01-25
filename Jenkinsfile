@@ -1,3 +1,4 @@
+/*
 pipeline {
     agent {
         label 'ansible'
@@ -24,5 +25,28 @@ pipeline {
        always{}
             echo 'send email'
        }
+    }
+}
+*/
+
+@Library('roboshop')_
+
+pipeline{
+    agent any
+    stages{
+        stage('Test Groovy'){
+            steps{
+                script{
+                print '****** pipeline script'
+                def abc= "hello"
+                def xyz= 10
+
+                print "abc= ${abc}"
+                print "xyz=${xyz}"
+
+                print abc
+                }
+            }
+        }
     }
 }
