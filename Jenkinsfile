@@ -30,6 +30,14 @@ pipeline {
 */
 
 /*
+@Library('roboshop') _
+
+ci()
+ci.call()
+
+*/
+
+
 @Library('roboshop')_
 
 pipeline{
