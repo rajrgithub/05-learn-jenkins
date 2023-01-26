@@ -113,8 +113,8 @@ pipeline{
 }
 */
 
+/*
 @Library('roboshop')_
-
 pipeline{
     agent any
     stages{
@@ -144,3 +144,9 @@ pipeline{
         }
     }
 }
+*/
+
+@Library('roboshop') _
+
+env.abc = "Some Data"
+test1.new1()
